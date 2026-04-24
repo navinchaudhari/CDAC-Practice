@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <title>Form Alignment</title>
+    <style>
+        *{
+            background-color: rgb(247, 244, 240);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: medium;
+            font-weight: 500;
+        }
+        label{
+            color: black; 
+            
+        }
+        input{
+            height: 30px;
+        }
+        #sub{
+            background-color: blue;
+            color: white;
+        }
+        #res{
+            background-color: red;
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <form action="https://www.google.com/" method="get">
+      <table>
+        <tr>
+          <td>
+            <label>Name: </label>
+          </td>
+          <td>
+            <input type="text" placeholder="Enter Name" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Password: </label>
+          </td>
+          <td>
+            <input type="password" placeholder="Enter Password" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Email: </label>
+          </td>
+          <td>
+            <input type="email" placeholder="Enter Email" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Gender: </label>
+          </td>
+          <td>
+            <input type="radio" name="gender" />
+            <label>Male</label>
+            <input type="radio" name="gender" />
+            <label>Female</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Select Qualification</label>
+          </td>
+          <td>
+            <select>
+              <option>10th</option>
+              <option>12th</option>
+              <option>Diploma</option>
+              <option>Gradutation</option>
+              <option>Post Gradutation</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Date: </label>
+          </td>
+          <td>
+            <input type="date" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Time: </label>
+          </td>
+          <td>
+            <input type="time" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Address: </label>
+          </td>
+          <td>
+            <textarea placeholder="Enter text here..."></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Profile Picture</label>
+          </td>
+          <td>
+            <input type="file" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input type="checkbox" />
+            <label> I have accept all the terms and conditons</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <button type="submit" id="sub">Submit</button>
+          </td>
+          <td>
+            <button type="reset" id="res">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
