@@ -1,0 +1,43 @@
+1) EquiJoin:
+
+Select * from emp, dept
+where dept.deptno = emp.deptno;
+
+Select ename, dname from emp, dept
+where dept.deptno = emp.deptno;
+
+select dname, sum(sal) from emp, dept
+where dept.deptno = emp.deptno
+group by dname;
+
+2) InEquiJoin:
+
+Select ename, dname from emp, dept
+Where dept.deptno != emp.deptno;
+
+Select ename, dname from emp, dept
+Where dept.deptno != emp.deptno order by 1;
+
+3) Outer join:
+i)Half Outer join:
+	a) Left Outer join:
+		-> Left join is used to obtain the matched records along with unmatched records of left join.
+		-> Select ename, dname from emp left join dept on dept.deptno = emp.deptno;
+	
+	b) Right Outer join:
+		-> Right join is used to obtain matched records along with the unmatched records of right table.
+		-> Select ename, dname from emp right join dept on dept.deptno = emp.deptno;
+
+ii)Full Outer join:
+-> full outer join is used to obtain the matched records along with the unmatched records of both the tables.
+-> Select ename, dname from emp left join dept on dept.deptno = emp.deptno
+				UNION
+   Select ename, dname from emp right join dept on dept.deptno = emp.deptno;
+
+4) Cartesian Join: (Cross Join)
+-> Every Row of Driving table is combine with every row of driven table.
+-> Select ename, dname from emp, dept;
+
+5) Self Join:
+-> Joining a table to itself
+-> Select a.ename , b.ename from emp a , emp b where a.mgr = b.empno; 

@@ -1,0 +1,69 @@
+		Stored Procedure
+		   MySQL-PL
+
+
+	create table Tempp
+	(
+		Fir int,
+		Second varchar(20)
+	);
+
+
+1) 	Delimiter //
+	Create Procedure abc()
+	Begin
+		Insert into Tempp values(1, 'Navin');
+	END; //
+	Delimiter ;
+
+2)	Delimiter //
+	Create Procedure bcd()
+	Begin
+		Declare x int;
+		Set x = 13;
+		Insert Into Tempp values(x, 'Navin');
+	End; //
+	Delimiter ;
+	// Drop Procedure bcd();
+
+3)	Delimiter //
+	Create Procedure cdf()
+	Begin
+		Declare x int default 15;
+		Insert Into tempp values (x, 'Bhavesh');
+	End; //
+	Delimiter ;
+
+4)	Delimiter //
+	Create procedure dfg()
+	Begin
+		declare x int Default 3000;
+		Declare y float Default 0.20;
+		Declare HRA float;
+		SET HRA  = x*y;
+		Insert into tempp values(x, 'Navin');
+		Insert into tempp values(HRA, 'Navin');
+	END; //
+	Delimiter ;
+
+5) 	Delimiter //
+	Create procedure fgh(name varchar(25), x float, y float)
+	Begin
+		Declare HRA float;
+		SET HRA = x*y;
+		INSERT INTO Tempp VALUES(x, name);
+		INSERT INTO Tempp VALUES(HRA, UPPER(NAME));
+	END; //
+	DELIMITER ;
+
+6)	DELIMITER //
+	CREATE procedure ghi(name char(15))
+	BEGIN
+		Declare x int;
+		Select Sal INTO x FROM EMP
+		WHERE ename = name;
+		
+		INSERT into Tempp VALUES(x, name);
+	END; //
+	DELIMITER ;
+	

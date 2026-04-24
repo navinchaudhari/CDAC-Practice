@@ -1,0 +1,32 @@
+Select deptno, sum(sal) from emp
+group by deptno
+having sum(sal)>17000;
+
+Select deptno, sum(sal) from emp
+group by deptno
+having min(sal)>7000;
+
+
+Select deptno, sum(sal) from emp
+group by deptno
+having sal>7000;
+
+Select deptno, sum(sal) from emp
+group by deptno;
+
+Select deptno, sum(sal) from emp
+group by deptno
+Order by 2;
+
+Select deptno, sum(sal) from emp
+where job = 'C'
+Group by deptno
+having sum(sal)>8000
+order by 1;
+
+Select deptno, job , count(*), min(sal), max(sal), sum(sal) from emp
+group by deptno, job
+order by 1; 
+
+Select max(sum_sal) from
+(Select sum(sal) sum_sal from emp group by deptno) abcd;

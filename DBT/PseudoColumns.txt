@@ -1,0 +1,48 @@
+# LIMIT :
+
+Create table emp3
+(
+	empno int(2),
+	Ename varchar(20),
+	Sal int(5)
+);
+
+Insert into emp3
+values
+(1, 'A', 5000),
+(2, 'B', 6000),
+(3, 'C', 7000),
+(4, 'D', 9000),
+(5, 'E', 8000);
+
+=> Select * from emp3 limit 3;
+-> It gives 3 rows starts from 1st row.
++-------+-------+------+
+| empno | Ename | Sal  |
++-------+-------+------+
+|     1 | A     | 5000 |
+|     2 | B     | 6000 |
+|     3 | C     | 7000 |
++-------+-------+------+
+
+=> Select * from emp3 limit 3 offset 2;
+-> It gives 3 rows after 2 rows
++-------+-------+------+
+| empno | Ename | Sal  |
++-------+-------+------+
+|     3 | C     | 7000 |
+|     4 | D     | 9000 |
+|     5 | E     | 8000 |
++-------+-------+------+
+
+=> Select * from emp3 offset 2;
+-> This will not work in MySQL.
+
+=> Select Sal from emp3 order by 1 desc;
+
+Q) Fourth Largest Salary
+-> Select Sal from emp3 order by sal desc limit 1 Offset 3;
+
+Q) Third lowest Salary
+-> Select Sal from emp3 order by sal limit 1 offset 2;
+

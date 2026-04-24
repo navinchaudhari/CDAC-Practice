@@ -1,0 +1,29 @@
+Section I
+Write queries for the following						(1 X 10=10Marks) 
+Display the Job-wise minimum salary
+Display the JOB column with duplicate values suppressed
+Display the rows where JOB column ends with the letter ‘T’
+Display the rows where employee name is at least 3 charactered 
+Display the name of the employee names and their salaries for the employees getting minimum salary
+Perform a FULL OUTER JOIN between DEPT and EMP table on the basis of deptno columns between the two tables 
+Display the department-number wise count of employees, considering only those departments who have more than 3 employees
+Display the department number wise average salary and sum of salary for employees of department 10
+Display the ENAME and JOB for all employees who belong to the same DEPTNO as employee ‘KING’, using sub-query
+Display employee names with their corresponding manager’s name
+
+Section II										(15 Marks)
+Write a stored procedure by the name PROCTRI which accepts S1,S2, and S3 as parameters which are the lengths of 3 sides of a triangle and then displays whether it is an EQUILATERAL, ISOSCELES, SCALENE OR INVALID triangle					(7 marks)
+
+Write a stored function FACT which accepts an integer n and returns the factorial of that integer n. Also show the invocation of this function through an appropriate query.	(8 marks)
+
+Section III
+Create the following table :							(15 marks)
+EMPSALCOMMTRACK
+(empno, who, when, old_sal, new_sal, old_comm, new_comm) with appropriate datatypes
+
+Write a trigger UPSALCOM on the table EMP such that it fires only  when the SAL or COMM or both these columns from the EMP table are updated and then the trigger implements the following logic : The EMPNO whose SAL or COMM or both are updated should be recorded as a record into the EMPSALCOMMTRACK table, and also the USER and the DATE when the update happened should be recorded. The SAL and COMM values before and after the update should also be recorded. However, if the updated SAL is same as the old SAL, then the appropriate columns old_sal, new_sal, of the EMPSALCOMMTRACK should be left null, though the empno, who and when columns are recorded. Similarly, if the updated COMM is same as the old COMM, then the appropriate columns old_comm, new_comm, of the EMPSALCOMMTRACK should be left null, though the empno, who and when columns are recorded. The DMLS within the trigger body should be committed, regardless of whether or not the update that invoked the trigger is committed or rolled back.
+1)Group by,Joins,Subquery che simple queries hotya tya 2marks la 10 queries hotya -20marks
+2) 10marks- Stored Procedure-6marks,Trigger-4marks
+3) 10 marks
+Mongodb 5questions 
+Create db,use db, add,delete

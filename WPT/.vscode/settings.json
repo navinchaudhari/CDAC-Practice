@@ -1,0 +1,6 @@
+{
+    "rainbowTags.allowEverywhere": true
+}
+{
+  "css.styleSheets": ["src/**/*.css"]
+}
