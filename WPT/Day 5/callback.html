@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Requirement is to make function synchronous that means after execution of
+        one function then only execution of another function should start
+    -->
+
+    <script>
+
+        setTimeout(() => {
+            var sum = 2 + 3;
+            console.log("Sum is ", sum);
+            setTimeout(() => {
+                var fact = 1;
+                for (var i = 1; i <= sum; i++) {
+                    fact *= i;
+                }
+                console.log("Factorial of Number ", fact);
+
+                setTimeout(() => {
+                    var square = fact * fact;
+                    console.log("Square of a number ", square);
+
+                }, 1000)
+            }, 3000)
+        }, 1500)
+
+
+    </script>
+</body>
+
+</html>

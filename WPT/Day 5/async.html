@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        setTimeout(() => {
+            var sum = 5 + 3;
+            console.log("Sum is: ", sum);
+        }, 1500);
+
+        console.log("Sum is Finished!");
+
+        setTimeout(() => {
+            var num = 5;
+            var fact = 1;
+            for (let i = 1; i <= num; i++) {
+                fact *= i;
+            }
+            console.log("Factorial of a number is ", fact);
+        }, 1000);
+
+        setTimeout(()=>{
+            var sq = 8*8;
+            console.log("Square of a number is ", sq);
+            
+        },500)
+
+        console.log("All Execution completed");
+
+    </script>
+</body>
+
+</html>
