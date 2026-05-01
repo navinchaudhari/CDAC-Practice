@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div col-lg-4>
+                <div class="alert alert-primary" role="alert">
+                    Weather API
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city">
+
+                </div>
+                <button onclick="fetchWeather()" class="btn btn-success">Fetch Weather</button>
+            </div>
+        </div>
+
+        <div class="row location-section" id="">
+            <div class="col-lg-4 mt-5">
+                <h4 id="city-name"></h4>
+                <h4 id="state"></h4>
+                <h4 id="date-time"></h4>
+
+            </div>
+            <div class="col-lg-4">
+                <img id="weather-condition-img" alt="Icon">
+                <h4 id="weather-condition-text"></h4>
+                <h4 id="temp"></h4>
+                <h4 id="wind-speed"></h4>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        async function fetchWeather() {
+            try {
+                const city = document.getElementById("city").value;
+                const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=4d57a362ba674d92a36143924262704&q=${city}&aqi=no%22`);
+                const weatheraData = await response.json();
+                const { current, location } = weatheraData;
+                const { name, region, country, localtime } = location;
+                const { condition, temp_c, temp_f, wind_kph, wind_mph } = current;
+
+                const { text, icon } = condition;
+
+                document.getElementById("city-name").innerHTML = name;
+
+                document.getElementById("state").innerHTML = `${region}, ${country}`;
+
+                document.getElementById("date-time").innerHTML = localtime;
+
+                document.getElementById("weather-condition-img").setAttribute("src", `http:${icon}`)
+
+                document.getElementById("weather-condition-text").innerHTML = text;
+
+                document.getElementById("temp").innerHTML = `${temp_c}&deg;C | ${temp_f}&deg;F`
+
+                document.getElementById("wind-speed").innerHTML = `Wind Speed: ${wind_kph} KPH | ${wind_mph}MPH`
+
+                console.log(weatheraData);
+
+
+            } catch (error) {
+                console.log(error);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

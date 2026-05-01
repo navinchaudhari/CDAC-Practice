@@ -1,0 +1,25 @@
+const input = "2026-04-28 09:07";
+
+// 1. Parse the date. Replacing the space with 'T' ensures it parses 
+// reliably across all browsers as an ISO-8601 string.
+const date = new Date(input.replace(' ', 'T'));
+
+// 2. Extract the date components
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const weekday = days[date.getDay()];
+const day = date.getDate();
+const year = date.getFullYear();
+
+// 3. Extract and format the time components (12-hour clock)
+let hours = date.getHours();
+const minutes = date.getMinutes().toString().padStart(2, '0'); // Ensures "07" instead of "7"
+const ampm = hours >= 12 ? 'PM' : 'AM';
+
+hours = hours % 12;
+hours = hours ? hours : 12; // Converts hour '0' (midnight) to '12'
+
+// 4. Construct the final string
+const formattedDate = `${weekday}, ${day} ${year} ${hours}:${minutes} ${ampm}`;
+
+console.log(formattedDate); 
+// Output: Tuesday, 28 2026 9:07 AM
